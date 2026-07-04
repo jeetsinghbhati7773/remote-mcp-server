@@ -3,7 +3,10 @@ import os
 import aiosqlite  # Changed: sqlite3 → aiosqlite
 import tempfile
 # Store database in the same folder as this script
-DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "expenses.db")
+
+TEMP_DIR = tempfile.gettempdir()
+DB_PATH = os.path.join(TEMP_DIR, "expenses.db")
+# DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "expenses.db")
 CATEGORIES_PATH = os.path.join(os.path.dirname(__file__), "categories.json")
 
 print(f"Database path: {DB_PATH}")
